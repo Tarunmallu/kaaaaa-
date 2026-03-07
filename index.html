@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Dear Kavana </title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;700&display=swap');
+
+:root {
+--primary-color: #ffffff;
+--secondary-color: #aaaaaa;
+--background-color: #121212;
+--accent-color: #ff6b6b;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background: radial-gradient(circle at 20% 20%, #3a3a6a, #1b1b2f 40%, #0f0f1a 70%, #000000 100%);
+color:var(--primary-color);
+overflow-x:hidden;
+}
+
+.container{
+width:100%;
+overflow-y:scroll;
+scroll-snap-type:y mandatory;
+height:100vh;
+}
+
+section{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:0 5%;
+scroll-snap-align:start;
+position:relative;
+opacity:0;
+transform:translateY(20px);
+transition:opacity 1.5s ease, transform 1.5s ease;
+background: rgba(255,255,255,0.02);
+}
+
+section.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.hero h1{
+font-family:'Alex Brush',cursive;
+font-size:8rem;
+font-weight:400;
+margin-bottom:1rem;
+text-shadow:0 0 25px rgba(255,255,255,0.3);
+}
+
+.hero p{
+font-size:1.5rem;
+}
+
+.message h2{
+font-size:3rem;
+margin-bottom:2rem;
+}
+
+.message p{
+font-size:1.2rem;
+line-height:1.8;
+max-width:800px;
+}
+
+.interactive-section{
+cursor:pointer;
+}
+
+.hidden-message{
+display:none;
+margin-top:2rem;
+font-style:italic;
+color:var(--accent-color);
+}
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.gallery-item{
+width:250px;
+height:350px;
+background-size:cover;
+background-position:center;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.5);
+transition:transform 0.3s ease;
+}
+
+.gallery-item:hover{
+transform:scale(1.05);
+}
+
+.final-wish h2{
+font-family:'Alex Brush',cursive;
+font-size:6rem;
+color:var(--accent-color);
+}
+
+/* Scroll arrow */
+
+.scroll-down{
+position:absolute;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+animation:bounce 2s infinite;
+}
+
+.scroll-down svg{
+width:30px;
+height:30px;
+fill:white;
+}
+
+@keyframes bounce{
+0%,20%,50%,80%,100%{transform:translateY(0);}
+40%{transform:translateY(-30px);}
+60%{transform:translateY(-15px);}
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:5rem;
+}
+
+.message h2{
+font-size:2rem;
+}
+
+.final-wish h2{
+font-size:4rem;
+}
+
+}
+
+/* moving glow */
+
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
+animation:moveLight 15s linear infinite;
+pointer-events:none;
+z-index:0;
+}
+
+@keyframes moveLight{
+0%{transform:translate(-25%,-25%);}
+50%{transform:translate(-30%,-30%);}
+100%{transform:translate(-25%,-25%);}
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+background:rgba(0,0,0,0.6);
+color:white;
+border:1px solid rgba(255,255,255,0.3);
+padding:10px 18px;
+border-radius:30px;
+font-size:14px;
+cursor:pointer;
+backdrop-filter:blur(6px);
+transition:0.3s;
+z-index:999;
+}
+
+.music-btn:hover{
+background:rgba(255,255,255,0.2);
+transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="music-btn" onclick="toggleMusic()" id="musicButton">🎵 Music</button>
+
+<div class="container">
+
+<section class="hero visible">
+<h1>Happy Birthday</h1>
+<p>kavana</p>
+
+<div class="scroll-down">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M12 21l-12-12h5v-9h14v9h5z"/>
+</svg>
+</div>
+
+</section>
+
+<section class="message">
+
+<h2>heyyy buddy...</h2>
+
+<p>
+Happy Birthday, my dear best friend.
+
+You are not just a friend, you are a beautiful part of my life.
+Your smile makes even the darkest days feel bright.
+Every moment spent with you becomes a memory I cherish forever.
+Your kindness, laughter, and heart make this world better.
+I’m grateful for every laugh, every talk, and every moment with you.
+You deserve all the happiness this world can give.
+May your dreams grow bigger and your worries grow smaller.
+Thank you for being the amazing person you are.
+Happy Birthday once again — stay the wonderful soul I admire so much.
+</p>
+
+</section>
+
+<section class="message interactive-section" onclick="revealMessage()">
+
+<h2>Believe in Yourself</h2>
+
+<p>
+Never forget how strong and capable you truly are.
+Every challenge is just another step toward something greater.
+The world has so many beautiful things waiting ahead.
+Dream big, stay confident, and keep moving forward.
+There is so much potential, strength, and brilliance inside you.
+Believe in yourself — amazing things are meant to happen in your life.
+
+CLICK HERE
+</p>
+
+<p class="hidden-message" id="hiddenMessage">
+A strong mother raised a stronger soul — always make that strength a reason for her smile.
+</p>
+
+</section>
+
+<section>
+
+<h2>The Beauty of a Thousand Moments</h2>
+
+<div class="gallery">
+<div class="gallery-item" style="background-image:url('mosaic.jpg');"></div>
+</div>
+
+</section>
+
+<section class="final-wish">
+<h2>With all my love,</h2>
+</section>
+
+</div>
+
+<audio id="bgMusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+document.addEventListener('DOMContentLoaded',function(){
+
+const sections=document.querySelectorAll('section');
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
+});
+},{threshold:0.1});
+
+sections.forEach(section=>{
+observer.observe(section);
+});
+
+});
+
+function revealMessage(){
+
+const hiddenMessage=document.getElementById('hiddenMessage');
+
+if(hiddenMessage.style.display==="block"){
+hiddenMessage.style.display="none";
+}else{
+hiddenMessage.style.display="block";
+}
+
+}
+
+/* MUSIC CONTROL */
+
+let music=document.getElementById("bgMusic");
+let musicBtn=document.getElementById("musicButton");
+
+document.body.addEventListener("click",function(){
+music.play();
+},{once:true});
+
+function toggleMusic(){
+
+if(music.paused){
+music.play();
+musicBtn.innerHTML="🔊 Music ON";
+}else{
+music.pause();
+musicBtn.innerHTML="🔇 Music OFF";
+}
+
+}
+
+</script>
+
+</body>
+</html>
